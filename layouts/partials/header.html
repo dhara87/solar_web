@@ -1,0 +1,82 @@
+{{ range first 1 (where .Site.Pages "Type" "header") }}
+<div class="page-wrapper">
+    <header class="main-header header-style-five">
+        <!-- Header Upper -->
+        <div class="header-main-box">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="clearfix">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo"><a href="/" title="Energy Platform">
+                                    <img src="{{ .Params.header_logo }}" alt="Energy Platform"
+                                        title="Energy Platform" style="margin-top:5px;"></a>
+                            </div>
+                        </div>
+                        <!--Nav Box-->
+                        <div class="nav-box clearfix">
+                            <div class="nav-outer clearfix">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
+
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation clearfix">
+                                            <li><a href="{{ site.BaseURL | relLangURL }}">{{ site.Params.Home }}</a></li>
+                                            {{ range .Site.Menus.main }}
+                                            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                                            {{ end }}
+                                            <li><a style="color:#ff6600 !important" href="/shopping-cart/">Go to Cart</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="/" title=""><img src="/images/EnergyPlatformlogo1.png" alt="" title=""></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav><!-- Main Menu End-->
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
+
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="/"><img src="/images/EnergyPlatformlogo2.png" alt="" title=""></a>
+                </div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <!--Social Links-->
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+    </header>
+{{ end }}

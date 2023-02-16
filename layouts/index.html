@@ -1,0 +1,341 @@
+{{ define "main" }} 
+
+<section class="projects-section-three">
+    <div class="outer-container clearfix">
+        <!--Image Column-->
+        <div class="image-column clearfix">
+            <div class="inner clearfix">
+                <!--Text Over Block-->
+                <div class="text-over-block">
+                    <div class="inner-box">
+                        <video controls="controls" playsinline style="width: 100%;" autoplay="autoplay" loop="true">
+                            <source src="{{ .Params.Video_link }}" type="video/mp4" />
+                            <source src="{{ .Params.Video_link }}" type="video/ogg" />
+                            <source src="{{ .Params.Video_link }}" type="video/webm" />
+                        </video>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--Text Column-->
+        <div class="text-column clearfix">
+            <div class="bg-layer"></div>
+
+            <div class="inner clearfix pt-5">
+                <div class="content">
+                    <div class="title">
+                        <h2>{{ .Params.column_heading }}</h2>
+                    </div>
+                    <div class="features">
+                        <ul>
+                            <li>{{ .Params.column_content1 }}</li>
+                            <li>{{ .Params.column_content2 }}<br> <b>{{ .Params.column_content3 }}</b></li>
+                        </ul>
+                    </div>
+                    <div class="links-box"><a href="/disclaimer" class="theme-btn btn-style-one" ><div class="btn-title"><span class="btn-txt">Read more</span><span class="btn-icon"><span class="icon flaticon-arrows-11"></span> </span></div></a></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section class="about-section-four pb-0">
+
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="title-column col-lg-6 col-md-12 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"
+                data-wow-duration="2000ms">
+                <div class="inner">
+                    <div class="sec-title">
+                        <h2>{{ .Params.welcome_heading }}</h2>
+                        <div class="bottom-dots clearfix">
+                            <span class="dot line-dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                    </div>
+                    <div class="text-content text-justify">
+                        <p>{{ .Params.welcome_description }}</p>
+                        <p>{{ .Params.welcome_content }}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-column col-lg-6 col-md-12 col-sm-12 mb-4">
+                <table class="table table-striped table-bordered text-justify">
+                    <thead class="orangebg">
+                      <tr>
+                        <th colspan="2" class="text-center p-2">Why DIY Solar? </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="theadbg">
+                        <td class="p-2">DIY Solar </td>
+                        <td class="p-2">Professional Solar </td>
+                      </tr>
+                      <tr>
+                        <td class="p-2">No Middleman, No commissions </td>
+                        <td class="p-2">Huge commissions charged by middleman </td>
+                      </tr>
+                      <tr>
+                        <td class="p-2">Choose right products for yourself that suits your need </td>
+                        <td class="p-2">Imposed products by solar professionals that suits their need </td>
+                      </tr>
+                      <tr>
+                        <td class="p-2">Quick and personalized process </td>
+                        <td class="p-2">Generalized and time consuming process  </td>
+                      </tr>
+                      <tr>
+                        <td class="p-2">Clients empowered with unbiased and transparent information  </td>
+                        <td class="p-2">Often unclear and misleading information shared   </td>
+                      </tr>
+                      <tr>
+                        <td class="p-2">Right to choose qualified solar installer from variety of options   </td>
+                        <td class="p-2">No option to choose the preferred installer   </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+<span class="cf_trigger">Get In Touch</span>
+<div class="cf_box">
+<span class="cf_close">
+    <i class="fas fa-times"></i>
+</span>
+<h3>Get In Touch</h3>
+<div class="inner-box">
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-4 col-form-label">Name:</label>
+        <div class="col-sm-8">
+            <input type="text" id="name_inq" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-4 col-form-label">Email
+            ID:</label>
+        <div class="col-sm-8">
+            <input type="text" id="email_inq" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-4 col-form-label">Contact
+            No:</label>
+        <div class="col-sm-8">
+            <input type="number" id="mobile_inq" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword"
+            class="col-sm-4 col-form-label">Address:</label>
+        <div class="col-sm-8">
+            <input type="text" id="address_inq" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="text-center col-md-12">
+            <button onclick="submitTouchSide()"
+                class="mt-3 round_shadow_button">Submit <i
+                    class="fa fa-check-circle"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<section class="team-section">
+
+  <div class="">
+      <div class="title-box clearfix">
+          <div class="sec-title fuel-theme" style="float: none;text-align: center;">
+              <h2>{{ .Params.solar_steps_heading }}</h2>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="">
+
+  <div class="auto-container">
+      <div class="row clearfix">
+          <!--Service Block-->
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_1 }}
+                              </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 1</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_2 }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 2</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_3 }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 3</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_4 }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 4</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_5 }}<br><br>
+                            <div><a href="/blog/how-to-search-a-local-installer/" ><div class="btn-title"><span class="btn-txt">Click here for information about installer</span></span></div></a></div>        
+                          </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 5</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="service-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner-box">
+                  <div class="image-box">
+                      <div class="content">
+                          <div class="text text-justify">{{ .Params.step_6 }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="title-box">
+                      <div class="title-inner">
+                          <h3>Step 6</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+</div>
+</section>
+<!-- 
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Q2bQLNSYb1FFWHiGUnFiCkvjjNaZPEM&libraries=places&callback=initMap">
+</script> -->
+
+<script>
+
+function initMap() {
+    google.maps.event.addDomListener(window, 'load', initialize);
+}
+ 
+ function initialize() {
+     var input = document.getElementById('address_inq');
+     var autocomplete = new google.maps.places.Autocomplete(input);
+ }
+
+  function changeStyle(params) {
+      document.getElementById(`${params}`).style.border = "1px solid gray";  
+  }
+
+  async function submitTouchSide() {
+		let name;
+		let email;
+		let mobile;
+		let address;
+		name = $("#name_inq").val();
+		email = $("#email_inq").val();
+		mobile = $("#mobile_inq").val();
+		address = $("#address_inq").val();
+		const data = {
+			name: name,
+			email: email,
+			mobile: mobile,
+			address: address,
+		};
+
+        
+		if (!name || !email || !mobile || !address) {
+			alert("Please insert all the filds")
+			return false;
+		}
+		await fetch("https://www.energyplatform.com.au/.netlify/functions/get-in-touch", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-type": "application/json",
+			}
+		}).then((response) => {
+			clearForm();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			alert('Thank you for sharing your contact details. We will contact you soo.')
+		 })
+	}
+	function clearForm() {
+      document.getElementById("name_inq").value = "";
+      document.getElementById("email_inq").value = "";
+      document.getElementById("mobile_inq").value = "";
+      document.getElementById("address_inq").value = "";
+    }
+</script>
+<script>
+    var video = document.querySelector('video');
+    video.muted = true;
+    video.play() 
+</script>
+
+{{ end }}

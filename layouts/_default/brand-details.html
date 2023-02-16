@@ -1,0 +1,85 @@
+{{ define "main" }}
+    
+<section class="about-section-four">
+
+    <div class="auto-container">
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="inner-box pt-0">
+                    <div class="p-0">
+                        <div class="content text-center">
+                            <img src="{{ .Params.image }}" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <div class="inner">
+                    <div class="text-content text-justify mb-3">
+                        <p>
+                            {{ .Content }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/*  {{ end }}  */}}
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="sec-title mb-0">
+                    <h3 class="font-weight-bold">Products</h3>
+                </div>
+            </div>
+            
+            {{/*  {{ $Title:=.Title }}  */}}
+            {{ range where .Site.RegularPages "Type" "in" "products" }}
+            {{/*  {{ if eq .Params.brand_slug .Params.product_brand }}  */}}
+            <div brand="{{ .Params.product_brand }}" style="display:none" class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp"
+                data-wow-delay="0ms" data-wow-duration="2000ms">
+                <div class="inner-box pt-0">
+                        <div class="solarimage-box p-0">
+                            <div class="content">
+                                <img src="{{ .Params.image }}" class="productimg">
+                                <div class="text text-justify mt-2">
+                                    <span class="producttitle">{{ .Params.product_title }}</span>
+                                </div>
+                                <div class="text text-justify mt-0">
+                                    <h5 style="color: #000;">{{ .Params.product_content }}</h5>
+                                </div>
+                                <div class="text text-justify">
+                                    <a href="{{ .Params.datasheet_pdf_link }}"><i class="fa fa-file" aria-hidden="true"
+                                            style="color: #ff6600;"></i><span class="producttitle">
+                                            Datasheet</span></a>
+                                </div>
+                                <div class="text text-center">
+                                    <a href="{{ .Permalink }}"
+                                        class="mt-3 round_shadow_button_orangepricebtn">Price </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+            {{/*  {{ end }}  */}}
+
+        </div>
+    </div>
+    <script>
+       document.addEventListener("DOMContentLoaded", function (event) {
+            const brand = window.location.pathname.replaceAll('/','')
+            let list = document.querySelectorAll('[brand='+brand+']')
+            list.forEach((elem)=>{
+                elem.style.display = "block"
+            })
+        });
+    </script>
+</section>
+
+{{ end }}
+
+
+
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{- partial "head.html" . -}}
+
+<body>
+	{{- partial "header.html" . -}}
+	<div id="banner-area">
+        <img src="/images/pages/contact-header.jpg" alt="" style="width: 100%;" class="topbanner" />
+        <div class="parallax-overlay"></div>
+        <div class="banner-title-content">
+          <div class="text-center">
+            <h2 style="font-size: 80px">404 Not Found</h2>
+          </div>
+        </div>
+      </div>
+	{{- block "main" . }}{{- end }}
+	{{- partial "footer.html" . -}}
+</body>
+</html>

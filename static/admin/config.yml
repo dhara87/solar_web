@@ -1,0 +1,270 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/images"
+public_folder: "/images"
+collections:
+
+  - name: "Home" 
+    label: "Home"
+    folder: "content/english"
+    create: false
+    fields:
+      - { label: "Home", name: "title", widget: "string" }
+      - { label: "Video Link", name: "Video_link", widget: "file" }
+      - { label: "Column Heading", name: "column_heading", widget: "string" }
+      - { label: "Column Heading 1", name: "column_content1", widget: "string" }
+      - { label: "Column Heading 2", name: "column_content2", widget: "string" }
+      - { label: "Column Heading 3", name: "column_content3", widget: "string" }
+      - { label: "Welcome Heading", name: "welcome_heading", widget: "string" }
+      - { label: "Welcome Description", name: "welcome_description", widget: "string" }
+      - { label: "Welcome Content", name: "welcome_content", widget: "string" }
+      - { label: "Solar Steps Heading", name: "solar_steps_heading", widget: "string" }
+      - { label: "Step 1", name: "step_1", widget: "string" }
+      - { label: "Step 2", name: "step_2", widget: "string" }
+      - { label: "Step 3", name: "step_3", widget: "string" }
+      - { label: "Step 4", name: "step_4", widget: "string" }
+      - { label: "Step 5", name: "step_5", widget: "string" }
+      - { label: "Step 6", name: "step_6", widget: "string" }
+
+  - name: "Header" 
+    label: "Header"
+    folder: "content/english/header"
+    create: false
+    fields:
+      - { label: "Header Title", name: "title", widget: "string" }
+      - { label: "Header Logo", name: "header_logo", widget: "image" }
+      - { label: "Header Type", name: "type", widget: "string",default: "header" }
+  
+  - name: "Footer" 
+    label: "Footer"
+    folder: "content/english/footer"
+    create: false
+    fields:
+      - { label: "Footer Title", name: "title", widget: "string" }
+      - { label: "Footer Content 1", name: "footer_content1", widget: "string" }
+      - { label: "Footer Content 2", name: "footer_content2", widget: "string" }
+      - { label: "Footer Logo", name: "footer_logo", widget: "image" }
+      - { label: "Instagram Link", name: "instagram_link", widget: "string" }
+      - { label: "Facebook Link", name: "facebook_link", widget: "string" }
+      - { label: "Twitter Link", name: "twitter_link", widget: "string" }
+      - { label: "Linkedin Link", name: "linkedin_link", widget: "string" }
+      - { label: "Footer Type", name: "type", widget: "string" }
+
+  - name: "About Us" 
+    label: "About Us"
+    folder: "content/english/about-us"
+    create: false
+    fields:
+      - { label: "About Title", name: "title", widget: "string" }
+      - { label: "Vision", name: "vision_title", widget: "string" }
+      - { label: "Vision Content", name: "vision_content", widget: "string" }
+      - { label: "Mission", name: "mission_title", widget: "string" }
+      - { label: "Mission Content", name: "mission_content", widget: "string" }
+      - { label: "Welcome Title", name: "welcome_title", widget: "string" }
+      - { label: "Welcome Content", name: "welcome_content", widget: "string" }
+      - { label: "What We Do Title", name: "what_we_do_title", widget: "string" }
+      - { label: "What We Do Content", name: "what_we_do_content", widget: "string" }
+      - { label: "What More Title", name: "what_more_title", widget: "string" }
+      - { label: "What More Content", name: "what_more_content", widget: "string" }
+
+  - name: "DIY KITS" 
+    label: "Diy Kits"
+    folder: "content/english/diy-kits"
+    create: false
+    fields:
+      - { label: "DIY Title", name: "title", widget: "string" }
+      - { label: "Residential Image", name: "residential_image", widget: "image" }
+      - { label: "Residential Title", name: "residential_title", widget: "string" }
+      - { label: "Commercial Image", name: "commercial_image", widget: "image" }
+      - { label: "Commercial Title", name: "commercial_title", widget: "string" }
+
+  - name: "Brands" 
+    label: "Brands"
+    folder: "content/english/brands/all-brands"
+    create: true
+    fields:
+      - { label: "Brand Title", name: "title", widget: "string" }
+      - { label: "DIY Link", name: "diy_link", widget: "string" }
+      - { label: "Brand Image", name: "image", widget: "image" }
+      - { label: "Brand Name", name: "brand", widget: "string" }
+      - { label: "Brand Section", name: "section", widget: "string",default: "brand" }
+      - { label: "Featured", name: "featured", widget: "string" }
+      - { label: "Solar Module Company", name: "solarmodule", widget: "string" }
+      - { label: "Solar Inverters Company", name: "solarinverters", widget: "string" }
+      - { label: "Storage Company", name: "storage", widget: "string" }
+      - { label: "Electricals Company", name: "electricals", widget: "string" }
+      - { label: "Mounting Company", name: "mounting", widget: "string" }
+      - { label: "Brand Layout", name: "layout", widget: "string",default: "brand-details" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false}
+
+  - name: "Sliders" 
+    label: "Sliders"
+    folder: "content/english/brands/all-sliders"
+    create: true
+    fields:
+      - { label: "Slider Title", name: "title", widget: "string" }
+      - { label: "Slider Image", name: "image", widget: "image" }
+      - { label: "Slider Type", name: "type", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false}
+
+  - name: "Products" 
+    label: "Products"
+    folder: "content/english/brands/products"
+    create: true
+    fields:
+      - { label: "Product Title", name: "title", widget: "string" }
+      - { label: "Product Slug", name: "brand_slug", widget: "string" }
+      - { label: "Product Brand", name: "product_brand", widget: "string" }
+      - { label: "Product Types", name: "product_type", widget: "string" }
+      - { label: "Product Section", name: "section", widget: "string",default: "hotproduct" }
+      - { label: "HotProduct Filter", name: "hotproduct", widget: "string" }
+      - { label: "Datasheet PDF", name: "datasheet_pdf_link", widget: "file" }
+      - { label: "Installation PDF", name: "installation_pdf_link", widget: "file" }
+      - { label: "Warranty PDF", name: "warranty_pdf_link", widget: "file" }
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "Hot Icon Image", name: "icon_image", widget: "image" }
+      - { label: "Product Name", name: "product_title", widget: "string" }
+      - { label: "Product Content", name: "product_content", widget: "string" }
+      - { label: "Product Price", name: "product_price", widget: "string" }
+      - { label: "Product Type", name: "type", widget: "string",default: "products" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false}   
+
+  - name: "Disclaimer" 
+    label: "Disclaimer"
+    folder: "content/english/disclaimer"
+    create: false
+    fields:
+      - { label: "Disclaimer Title", name: "title", widget: "string" }
+      - { label: "Disclaimer Heading", name: "heading", widget: "string" }
+      - { label: "Disclaimer Content", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false} 
+
+  - name: "Services" 
+    label: "Services"
+    folder: "content/english/services"
+    create: true
+    fields:
+      - { label: "service Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "service URL", name: "url", widget: "string",default: "solar-panels" }
+      - { label: "service Image", name: "service_image", widget: "image" }
+      - { label: "service Title", name: "service_title", widget: "string" }
+      - { label: "service Type", name: "type", widget: "string",default: "services" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false} 
+
+  - name: "Service Section" 
+    label: "Service Section"
+    folder: "content/english/services/service-section"
+    create: true
+    fields:
+      - { label: "service Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "service Banner Image", name: "service_banner_image", widget: "image" }
+      - { label: "service Title", name: "service_title", widget: "string" }
+      - { label: "service Price", name: "service_price", widget: "string" }
+      - { label: "service Details", name: "pdf_link", widget: "file" }
+      - { label: "service Type", name: "type", widget: "string",default: "service-section" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false}     
+
+  - name: "Terms & Condition" 
+    label: "Terms & Condition"
+    folder: "content/english/terms-condition"
+    create: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Heading", name: "heading", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false}     
+
+
+  - name: "STC Scheme" 
+    label: "STC Scheme"
+    folder: "content/english/stc-scheme"
+    create: false
+    fields:
+      - { label: "STC Title", name: "title", widget: "string" }
+      - { label: "STC Heading", name: "stc_heading", widget: "string" }
+      - { label: "STC Calculator Link", name: "stc_calculator_link", widget: "string" }
+      - { label: "STC Note 1", name: "note_1", widget: "string" }
+      - { label: "STC Note 2", name: "note_2", widget: "string" }
+      - { label: "Value Per STC Points Today", name: "value_per_stc_points_today", widget: "string" }
+
+  - name: "Diy List" 
+    label: "All List"
+    folder: "content/english/diy-list/services"
+    create: false
+    fields:
+      - { label: "Module Title", name: "title", widget: "string" }
+      - { label: "Module Date", name: "date", widget: "date" }
+      - { label: "Module Image", name: "module_image", widget: "image" }
+      - { label: "Module Heading", name: "module_heading", widget: "image" }
+      - { label: "Module Type", name: "type", widget: "string",default: "diy-list" }
+    
+  - name: "Blog" 
+    label: "Blog"
+    folder: "content/english/blog"
+    create: true
+    fields:
+      - { label: "Blog Title", name: "title", widget: "string" }
+      - { label: "Blog URL", name: "slug", widget: "string" }
+      - { label: "Blog Image", name: "image", widget: "image" }
+      - { label: "Blog Video", name: "video_link", widget: "file" }
+      - { label: "Blog Title", name: "blogtitle", widget: "string" }
+      - { label: "Blog Description 1", name: "blogdescription1", widget: "string" }
+      - { label: "Blog Description 2", name: "blogdescription2", widget: "string" }
+      - { label: "Blog Date", name: "date", widget: "date" }
+      - { label: 'Blog post content', name: 'body', widget: 'markdown' }
+      - { label: "Blog Type", name: "type", widget: "string",default: "blog" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false} 
+
+
+  - name: 'Contact'
+    label: 'Contact'
+    folder: 'content/english/contact'
+    create: false
+    fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Contact Heading', name: 'heading', widget: 'string' }
+        - { label: 'Phone No', name: 'phone', widget: 'string'}
+        - { label: 'Email Id', name: 'email', widget: 'string'}
+        - { label: 'Address', name: 'address', widget: 'string'}
+        - { label: 'Description', name: 'description', widget: 'string'}
+
+ 
+  - name: 'Go To Cart'
+    label: 'Cart'
+    folder: 'content/english/shopping-cart'
+    create: false
+    fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Content 1', name: 'content_1', widget: 'string' }
+        - { label: 'Content 2', name: 'content_2', widget: 'string' }
+        - { label: 'Content 3', name: 'content_3', widget: 'string' }
+        
+  
+ 
+
+ 
+  
+   
+ 
+ 
+
+ 
+
+  
+   
+  
+ 
+  
+  
+ 
+  
+   
+  
+  
+   
+  
+  
+  

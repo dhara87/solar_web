@@ -1,0 +1,18 @@
+{{ define "main" }}
+    
+<section class="services-section-five">
+
+    <div class="auto-container">
+        <div class="">
+            <div class="row">
+                {{ range .Data.Pages }}
+                <div class="col-md-4">
+                    {{ .Render "blog" }}
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ end }}

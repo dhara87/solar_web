@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "netlify-cli": "^12.0.7",
+    "nodemailer": "^6.8.0",
+    "sib-api-v3-sdk": "^8.4.2"
+  }
+}

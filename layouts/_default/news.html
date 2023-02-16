@@ -1,0 +1,18 @@
+<article class="post">
+    <!-- post image start -->
+    <div class="post-image-wrapper">
+      <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Params.blogtitle }}" />
+      <span class="blog-date">{{.Date.Format "January 2, 2006"}}</span>
+    </div><!-- post image end -->
+    <div class="post-header clearfix">
+      <h2 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Params.blogtitle }}</a>
+      </h2>
+    </div><!-- post heading end -->
+    <div class="post-body">
+      <p>{{ .Params.blogdescription }}</p>
+    </div>
+    <div class="post-footer">
+      <a href="{{ .Permalink }}" class="btn btn-primary">Read more <i class="fa fa-angle-double-right">&nbsp;</i></a>
+    </div>
+   </article>

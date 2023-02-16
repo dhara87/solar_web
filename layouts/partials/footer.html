@@ -1,0 +1,309 @@
+<!-- Footer start -->
+{{ range first 1 (where .Site.Pages "Type" "footer") }}
+<footer class="main-footer footer-style-five">
+
+	<!--Widgets Section-->
+	<div class="widgets-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				<div class="col-lg-7 col-md-7 col-sm-7">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-5">
+							<div class="info-block mb-5">
+								<div class="icon-box">
+									<span class="icon">
+										<img src="{{ .Params.footer_logo }}" alt="Footer Logo" style="width: 90%;">
+									</span>
+								</div>
+
+							</div>
+							<div class="social-links text-center">
+								<ul class="clearfix">
+									<li><a href="{{ .Params.facebook_link }}"><span class="fab fa-facebook-square"
+												style="font-size: 30px;"></span></a></li>
+									<li><a href="{{ .Params.instagram_link }}"><span class="fab fa-instagram"
+												style="font-size: 30px;"></span></a></li>
+									<li><a href="{{ .Params.twitter_link }}"><span class="fab fa-twitter"
+												style="font-size: 30px;"></span></a></li>
+									<li><a href="{{ .Params.linkedin_link }}"><span class="fab fa-linkedin"
+												style="font-size: 30px;"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-7 col-sm-7">
+							<div class="footer-widget links-widget mt-40">
+								<div class="widget-title">
+									<h3>{{ .Params.footer_content1 }} <br> {{ .Params.footer_content2 }}</h3>
+								</div>
+								<form>
+									<div class="row mb-2">
+										<div class="col-md-12">
+											<input type="text" class="form-control" placeholder="Name">
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<input type="text" class="form-control" placeholder="Email">
+										</div>
+									</div>
+								</form>
+								<div class="form-group row">
+									<div class="text-center col-md-12">
+										<button type="submit" class="mt-3 round_shadow_button_orange">Submit <i
+												class="fa fa-check-circle"></i></button>
+
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<ul>
+								<li style="display: inline;margin-right: 20px;"><a
+										href="{{ site.BaseURL | relLangURL }}" class="text-white mr-3">{{
+										site.Params.Home }}</a> <span>|</span> </li>
+								{{ range .Site.Menus.main }}
+								<li style="display: inline;margin-right: 20px"><a href="{{ .URL | relLangURL }}"
+										class="text-white mr-3">{{ .Name }}</a> <span>|</span> </li>
+								{{ end }}
+								{{/* <li style="display: inline;margin-right: 20px"><a href="/diy-kits"
+										class="text-white mr-3">Diy Kits</a> <span>|</span> </li>
+								<li style="display: inline;margin-right: 20px"><a href="/stc-scheme"
+										class="text-white mr-3">STC Scheme</a> <span>|</span> </li>
+								<li style="display: inline;margin-right: 20px"><a href="/blog"
+										class="text-white mr-3">Blog</a> <span>|</span> </li>
+								<li style="display: inline;margin-right: 20px"><a href="/contact"
+										class="text-white mr-3">Contact Us</a> </li> */}}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-5">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="cform mt-40">
+								<div class="featured-block-five wow fadeInRight" data-wow-delay="0ms"
+									data-wow-duration="2000ms">
+									<div class="inner-box">
+											<div class="form-group row">
+												<label for="staticEmail" class="col-sm-4 col-form-label">Name:</label>
+												<div class="col-sm-8">
+													<input type="text" id="name_inq_ft" class="form-control">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="inputPassword" class="col-sm-4 col-form-label">Email
+													ID:</label>
+												<div class="col-sm-8">
+													<input type="text" id="email_inq_ft" class="form-control">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="inputPassword" class="col-sm-4 col-form-label">Contact
+													No:</label>
+												<div class="col-sm-8">
+													<input type="number" id="mobile_inq_ft" class="form-control">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="inputPassword"
+													class="col-sm-4 col-form-label">Address:</label>
+												<div class="col-sm-8">
+													<input type="text" id="address_inq_ft" class="form-control">
+												</div>
+											</div>
+											<div class="form-group row">
+												<div class="text-center col-md-12">
+													<button onclick="submitTouch()"
+														class="mt-3 round_shadow_button">Submit <i
+															class="fa fa-check-circle"></i></button>
+												</div>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Bottom -->
+	<div class="footer-bottom">
+		<div class="auto-container">
+
+			<div class="inner clearfix">
+				<!--Scroll to top-->
+				<div class="scroll-top-footer scroll-to-target" data-target="html"><span class="flaticon-arrows"></span>
+				</div>
+				<!--Copyright-->
+				<div class="copyright">Copyright (c) 2022 <a href="/terms-condition">Terms & Condition</a> All rights
+					reserved. |
+					Web Design By Atcults Pvt Ltd
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</footer>
+
+<script async
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Q2bQLNSYb1FFWHiGUnFiCkvjjNaZPEM&libraries=places&callback=initMap">
+	</script>
+
+<script>
+
+	function initMap() {
+		google.maps.event.addDomListener(window, 'load', initialize);
+	}
+
+	function initialize() {
+		var input = document.getElementById('address_inq_ft');
+		var getintouchaddress = document.getElementById('address_inq');
+		var cartaddress = document.getElementById('userAddress');
+		var blogaddress = document.getElementById('blogAddress');
+		
+		var autocomplete = new google.maps.places.Autocomplete(input);
+		var autocomplete = new google.maps.places.Autocomplete(getintouchaddress);
+		var autocomplete = new google.maps.places.Autocomplete(cartaddress);
+		var autocomplete = new google.maps.places.Autocomplete(blogaddress);
+	}
+
+	function clearForm_ft() {
+		document.getElementById("name_ft").value = "";
+		document.getElementById("email_ft").value = "";
+	}
+
+	function changeStyles(params) {
+		document.getElementById(`${params}`).style.border = "1px solid gray";
+	}
+
+	async function footer_submit() {
+		if ($("#name_ft").val().trim() == "") {
+			document.getElementById("name_ft").style.border = "3px solid red";
+		}
+
+		if ($("#email_ft").val().trim() == "") {
+			document.getElementById("email_ft").style.border = "3px solid red";
+		}
+
+
+		const name = $("#name_ft").val();
+		const email = $("#email_ft").val();
+
+
+
+		const data = {
+			name: name,
+			email: email,
+		};
+
+		if (!name || !email) {
+			return false;
+		}
+
+		document.getElementsByClassName("submit_btn_ft")[0].innerHTML = '<div class="spinner-border" style= "color:#ec6713; margin-top: 5%;" role="status"><span class="sr-only">Loading...</span></div>'
+
+
+		await fetch("https://www.energyplatform.com.au/.netlify/functions/submit-email", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-type": "application/json",
+			}
+		}).then((response) => {
+			clearForm_ft();
+			document.getElementsByClassName("submit_btn_ft")[0].innerHTML = "<button class='mt-3 round_shadow_button_orange' onclick='footer_submit()'>Submit <i class='fa fa-check-circle'></i></button>"
+			alert("Thank you for subscribing to Energy Platform!")
+		})
+			.catch((err) => {
+				console.log(err);
+				clearForm_ft();
+				document.getElementsByClassName("submit_btn_ft")[0].innerHTML = "<button class='mt-3 round_shadow_button_orange' onclick='footer_submit()'>Submit <i class='fa fa-check-circle'></i></button>"
+				alert("Something went wrong, Please try again later...");
+			});
+	}
+
+	function openCity(evt, cityName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+
+	async function submitTouch() {
+		let name;
+		let email;
+		let mobile;
+		let address;
+		name = $("#name_inq_ft").val();
+		email = $("#email_inq_ft").val();
+		mobile = $("#mobile_inq_ft").val();
+		address = $("#address_inq_ft").val();
+		const data = {
+			name: name,
+			email: email,
+			mobile: mobile,
+			address: address,
+		};
+		
+		if (!name || !email || !mobile || !address) {
+			alert("Please insert all the filds")
+			return false;
+		}
+		await fetch("https://www.energyplatform.com.au/.netlify/functions/get-in-touch", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-type": "application/json",
+			}
+		}).then((response) => {
+			clearForm();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			alert('Thank you for sharing your contact details. We will contact you soo.')
+		 })
+	}
+	function clearForm() {
+      document.getElementById("name_inq_ft").value = "";
+      document.getElementById("email_inq_ft").value = "";
+      document.getElementById("mobile_inq_ft").value = "";
+      document.getElementById("address_inq_ft").value = "";
+    }
+</script>
+<script>
+	var x =0;
+	jQuery('body').on('mousedown', '.round_shadow_button[onclick="submitTouch()"]', function() {
+	  if(x==0 && window.location.pathname=="/"){
+		gtag('event', 'conversion', {'send_to': 'AW-11030656927/PvgJCICfiocYEJ_v6Ysp'});
+		x=1;
+	  }
+	})
+  </script>
+{{ end }}
+</div>
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range .Site.Params.plugins.js}}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+<script>
+	$('.cf_trigger').click(function (event) {
+		$('.cf_box').addClass('active');
+	})
+	$('.cf_close').click(function (event) {
+		$('.cf_box').removeClass('active');
+	})
+</script>

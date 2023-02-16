@@ -1,0 +1,166 @@
+{{ define "main" }}
+
+<section class="faq-section">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="sec-title text-center">
+            <h2>{{ .Params.heading }}</h2>
+        </div>
+        <div class="title-box">
+            <div class="send-email"><span class="fas fa-phone-alt"></span>{{ .Params.phone }} </div>
+            <div class="send-email mt-3"><span class="fas fa-envelope"></span>{{ .Params.email }} </div>
+            <div class="send-email mt-3"><span class="fas fa-map-marker"></span>{{ .Params.address }} </div>
+        </div>
+        <div class="title-box">
+            <h2 class="font-weight-bold">{{ .Params.description }}</h2>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-12 col-sm-12"></div>
+            <!--Content Side-->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-content">
+
+                    <div class="leave-comments">
+                        <div class="default-form comment-form">
+                            <div>
+                                <div class="row clearfix">
+                                    <div class="col-md-12 col-sm-12 form-group">
+                                        <label>Name:</label>
+                                        <input type="text" name="username" id="name" onchange="changeStyle('name')"
+                                            required>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 form-group">
+                                        <label>Email:</label>
+                                        <input type="email" name="email" id="email" onchange="changeStyle('email')"
+                                            required>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 form-group">
+                                        <label>Contact:</label>
+                                        <input type="number" name="contact" id="mobile" onchange="changeStyle('mobile')"
+                                            required>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 form-group">
+                                        <label>How Can We Help You? :</label>
+                                        <textarea name="message" id="message"
+                                            onchange="changeStyle('message')"></textarea>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 form-group">
+                                        <div class="">
+                                            <div class="g-recaptcha"
+                                                data-sitekey="6LcFAaQiAAAAAB0V4zjSxfYuDUCQsKuXtui3uUMD"
+                                                data-callback="verifyRecaptchaCallback"
+                                                data-expired-callback="expiredRecaptchaCallback"></div>
+                                            <input class="form-control d-none" data-recaptcha="true" required
+                                                data-error="Please complete the Captcha">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 form-group submit_btn">
+                                        <button class="mt-3 round_shadow_button" style="width:20%;"
+                                            onclick="submit()">Submit <i class="fa fa-check-circle"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12"></div>
+        </div>
+    </div>
+</div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<script>
+
+    function changeStyle(params) {
+        document.getElementById(`${params}`).style.border = "1px solid gray";
+    }
+
+    function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("mobile").value = "";
+        document.getElementById("message").value = "";
+    }
+
+    async function submit() {
+
+        if ($("#name").val().trim() == "") {
+            document.getElementById("name").style.border = "1px solid red";
+        }
+
+        if ($("#email").val().trim() == "") {
+            document.getElementById("email").style.border = "1px solid red";
+        }
+
+        if ($("#mobile").val().trim() == "") {
+            document.getElementById("mobile").style.border = "1px solid red";
+        }
+
+        if ($("#message").val().trim() == "") {
+            document.getElementById("message").style.border = "1px solid red";
+        }
+
+        const name = $("#name").val();
+        const email = $("#email").val();
+        const mobile = $("#mobile").val();
+        const message = $("#message").val();
+
+
+
+        const data = {
+            name: name,
+            email: email,
+            mobile: mobile,
+            message: message,
+        };
+
+        if (!name || !email || !mobile || !message) {
+            return false;
+        }
+
+        var rcres = grecaptcha.getResponse();
+        if (rcres.length) {
+            grecaptcha.reset();
+        } else {
+            alert("Please verify reCAPTCHA");
+            return false
+        }
+
+        document.getElementsByClassName("submit_btn")[0].innerHTML = '<div class="spinner-border mt-3 round_spinner_button" style= "color:#073265; text-align: center;" role="status"><span class="sr-only">Loading...</span></div>'
+        await fetch("https://www.energyplatform.com.au/.netlify/functions/contact-us", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json",
+            }
+        }).then((response) => {
+            clearForm();
+            document.getElementsByClassName("submit_btn")[0].innerHTML = "<button type='submit' class='mt-3 round_shadow_button' onclick='submit(form)'>Submit <i class='fa fa-check-circle'></i></button>"
+            alert("Thank you! \n Your message has been successfully sent. We will contact you very soon")
+        })
+            .catch((err) => {
+                console.log(err);
+                clearForm();
+                document.getElementsByClassName("submit_btn")[0].innerHTML = "<button type='submit' class='mt-3 round_shadow_button' onclick='submit(form)'>Submit <i class='fa fa-check-circle'></i></button>"
+                alert("Something went wrong, Please try again later...");
+            });
+    }
+
+</script>
+
+{{ end }}

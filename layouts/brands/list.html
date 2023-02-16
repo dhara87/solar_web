@@ -1,0 +1,344 @@
+{{ define "main" }}
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="auto-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab">
+                <button class="tablinks active" onmouseover="openCity(event, 'Solarmodules')">DIY Kit
+                    <i class="fa fa-angle-right float-right" aria-hidden="true"></i></button>
+                <button class="tablinks" onmouseover="openCity(event, 'Solarinverters')">Solar Inverters <i
+                        class="fa fa-angle-right float-right" aria-hidden="true"></i></button>
+                <button class="tablinks" onclick="gotoService('Storage')" onmouseover="openCity(event, 'storage')">Storage</button>
+                <button class="tablinks" onmouseover="openCity(event, 'Mounting')">Mounting <i
+                        class="fa fa-angle-right float-right" aria-hidden="true"></i></button>
+                <button class="tablinks" onclick="gotoService('Services')" onmouseover="openCity(event, 'serviceslider')">Services</button>
+                <button class="tablinks" onclick="gotoService('Electricals')" onmouseover="openCity(event, 'electricalslider')">Electricals</button>
+            </div>
+
+            <div id="Solarmodules" class="tabcontent active" style="display: block;">
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h3>{{ .Params.product_title }}</h3>
+                        {{/*  <a href="{{ .Params.diy_link }}" class="float-right orangetext">All</a>  */}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="row">
+                            {{ range .RegularPages }}
+                            {{ if eq .Params.section "brand" }}
+                            {{ if eq .Params.solarmodule true }}
+                            {{/*  {{ range where .Site.RegularPages "Type" "in" "solar-modules" }}  */}}
+                            <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <div onclick="goTo('{{ .Params.diy_link }}','solarmodule')"><img src="{{ .Params.image }}"
+                                        class="brandlogo"></div>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Solarinverters" class="tabcontent">
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h3 class="float-left">Solar Inverters</h3>
+                        {{/*  <a href="{{ .Params.diy_link }}" class="float-right orangetext">All</a>  */}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="row">
+                            {{ range .RegularPages }}
+                            {{ if eq .Params.section "brand" }}
+                            {{ if eq .Params.solarinverters true }}
+                            {{/*  {{ range where .Site.RegularPages "Type" "in" "solar-inverters" }}  */}}
+                            <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <div onclick="goTo('{{ .Params.diy_link }}','solarinverters')"><img src="{{ .Params.image }}"
+                                        class="brandlogo"></div>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="storage" class="tabcontent p-0">
+                <div id="storage" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#storage" data-slide-to="0" class="active"></li>
+                        <li data-target="#storage" data-slide-to="1"></li>
+                        <li data-target="#storage" data-slide-to="2"></li>
+                        <li data-target="#storage" data-slide-to="3"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        {{ range where .Site.RegularPages "Type" "in" "storage" }}
+                        <div class="carousel-item {{ .Params.sliderclass }}">
+                            <img src="{{ .Params.image }}" alt="{{ .Params.title }}" class="sliderimg">
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div id="Mounting" class="tabcontent">
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h3 class="float-left">Mountings</h3>
+                        {{/*  <a href="{{ .Permalink }}" class="float-right orangetext">All</a>  */}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="row">
+                            {{ range .RegularPages }}
+                            {{ if eq .Params.section "brand" }}
+                            {{ if eq .Params.mounting true }}
+                            {{/*  {{ range where .Site.RegularPages "Type" "in" "mounting" }}  */}}
+                            <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <div onclick="goTo('{{ .Params.diy_link }}','mounting')"><img src="{{ .Params.image }}"
+                                        class="brandlogo"></div>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="serviceslider" class="tabcontent p-0">
+                <div id="serviceslider" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#serviceslider" data-slide-to="0" class="active"></li>
+                        <li data-target="#serviceslider" data-slide-to="1"></li>
+                        <li data-target="#serviceslider" data-slide-to="2"></li>
+                        <li data-target="#serviceslider" data-slide-to="3"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        {{ range where .Site.RegularPages "Type" "in" "serviceslider" }}
+                        <div class="carousel-item {{ .Params.sliderclass }}">
+                            <img src="{{ .Params.image }}" alt="Slider" class="sliderimg">
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div id="electricalslider" class="tabcontent p-0">
+                <div id="electricalslider" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#electricalslider" data-slide-to="0" class="active"></li>
+                        <li data-target="#electricalslider" data-slide-to="1"></li>
+                        <li data-target="#electricalslider" data-slide-to="2"></li>
+                        <li data-target="#electricalslider" data-slide-to="3"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        {{ range where .Site.RegularPages "Type" "in" "electricalslider" }}
+                        <div class="carousel-item {{ .Params.sliderclass }}">
+                            <img src="{{ .Params.image }}" alt="Slider" class="sliderimg">
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        {{ range where .Site.RegularPages "Type" "in" "services" }}
+        <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0ms"
+            data-wow-duration="2000ms">
+            <div onclick="gotoService('{{ .Params.service_title }}')">
+                <div class="inner-box">
+                    <div class="solarimage-box p-0">
+                        <div class="content">
+                            <img src="{{ .Params.service_image }}">
+                            <div class="text text-center">
+                                <div class="text-black">
+                                    {{ .Params.service_title }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-4 mb-4">
+            <h2 class="fancy-title"><span>FEATURED BRANDS</span></h2>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="row">
+                {{/* <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1"></div> */}}
+                {{ range .RegularPages }}
+                {{ if eq .Params.section "brand" }}
+                {{ if eq .Params.featured true }}
+                <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                    <a href="{{ .Permalink }}"><img src="{{ .Params.image }}" class="brandlogo"></a>
+                </div>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        <div class="col-md-12 mt-4 mb-4">
+            <h2 class="fancy-title"><span>HOT PRODUCTS</span></h2>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="row">
+                {{ range .RegularPages }}
+                {{ if eq .Params.section "hotproduct" }}
+                {{ if eq .Params.hotproduct true }}
+                <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp"
+                    data-wow-delay="0ms" data-wow-duration="2000ms">
+                    <a href="{{ .Permalink }}">
+                        <div class="inner-box pt-0">
+                            <div class="solarimage-box p-0">
+                                <div class="content">
+                                    <img src="{{ .Params.icon_image }}" class="hotprod">
+                                    <img src="{{ .Params.image }}" class="productimg">
+                                    <div class="text text-justify mt-2">
+                                        <span class="producttitle">{{ .Params.product_title }}</span>
+                                    </div>
+                                    <div class="text text-justify mt-0">
+                                        <h5 style="color: #000;">{{ .Params.product_content }}</h5>
+                                    </div>
+                                    <div class="text text-justify">
+                                        <a href="{{ .Params.datasheet_pdf_link }}"><i class="fa fa-file"
+                                                aria-hidden="true" style="color: #ff6600;"></i><span
+                                                class="producttitle">
+                                                Datasheet</span></a>
+                                    </div>
+                                    {{/* <div class="text text-center">
+                                        <a href="/solar-panels-details"
+                                            class="mt-3 round_shadow_button_orangepricebtn">click </a>
+                                    </div> */}}
+                                    <div class="text text-center">
+                                        <a href="{{ .Permalink }}" class="mt-3 round_shadow_button_orangepricebtn">Price
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                {{/* <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp"
+                    data-wow-delay="0ms" data-wow-duration="2000ms">
+                    <a href="/solar-panels-details">
+                        <div class="inner-box pt-0">
+                            <div class="solarimage-box p-0">
+                                <div class="content">
+                                    <img src="/images/hot.png" class="hotprod">
+                                    <img src="/images/product.jpg" class="productimg">
+                                    <div class="text text-justify mt-2">
+                                        <span class="producttitle">Tiger LM <br> 60HC <br> 355-375
+                                            Watt</span>
+                                    </div>
+                                    <div class="text text-justify mt-0">
+                                        <h5 style="color: #000;">MONO-FACIAL MODULE</h5>
+                                    </div>
+                                    <div class="text text-center">
+                                        <a href="/solar-panels-details"
+                                            class="mt-3 round_shadow_button_orangepricebtn">Click </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp"
+                    data-wow-delay="0ms" data-wow-duration="2000ms">
+                    <a href="/solar-panels-details">
+                        <div class="inner-box pt-0">
+                            <div class="solarimage-box p-0">
+                                <div class="content">
+                                    <img src="/images/hot.png" class="hotprod">
+                                    <img src="/images/product1.jpg" class="productimg">
+                                    <div class="text text-justify mt-2">
+                                        <span class="producttitle">Tiger Neo N-type <br> 60HL4-(V) <br>
+                                            460-480 Watt</span>
+                                    </div>
+                                    <div class="text text-justify mt-0">
+                                        <h5 style="color: #000;">MONO-FACIAL MODULE</h5>
+                                    </div>
+                                    <div class="text text-center">
+                                        <a href="/solar-panels-details"
+                                            class="mt-3 round_shadow_button_orangepricebtn">Click </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp"
+                    data-wow-delay="0ms" data-wow-duration="2000ms">
+                    <a href="/solar-panels-details">
+                        <div class="inner-box pt-0">
+                            <div class="solarimage-box p-0">
+                                <div class="content">
+                                    <img src="/images/hot.png" class="hotprod">
+                                    <img src="/images/product1.jpg" class="productimg">
+                                    <div class="text text-justify mt-2">
+                                        <span class="producttitle">Tiger Neo N-type <br> 60HL4-(V) <br>
+                                            460-480 Watt</span>
+                                    </div>
+                                    <div class="text text-justify mt-0">
+                                        <h5 style="color: #000;">MONO-FACIAL MODULE</h5>
+                                    </div>
+                                    <div class="text text-center">
+                                        <a href="/solar-panels-details"
+                                            class="mt-3 round_shadow_button_orangepricebtn">Click </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div> */}}
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+<script>
+    function goTo(url,type) {
+        let gotourl = "/" + url + "&&type=" + type
+        window.location.href = gotourl
+    }
+
+    function gotoService(title){
+        let gotourl = "/diy-list/?type="+title
+        if(title === "Electricals"){
+            gotourl = "/diy-list/?type=electricals"
+        }else if(title === "Mounting"){
+            gotourl = "/diy-list/?type=mounting"
+        }else if(title === "Services"){
+            gotourl = "/services/"
+        }else if(title === "Solar Inverters"){
+            gotourl = "/diy-list/?type=solarinverters"
+        }else if(title === "Solar Modules"){
+            gotourl = "/diy-list/?type=solarmodule"
+        }else if(title === "Storage"){
+            gotourl = "/diy-list/?type=storage"
+        }
+        window.location.href = gotourl
+
+    }
+</script>
+{{ end }}

@@ -1,0 +1,24 @@
+<!--Service Block Three-->
+<div class="service-block-six">
+    <div class="inner-box">
+        <div class="image-box">
+            <figure class="image">
+                <a href="#"><img src="{{ .Params.image | relURL }}" alt="{{ .Params.blogtitle }}"></a>
+            </figure>
+        </div>
+        <div class="lower-box">
+            <h3><a href="{{ .Permalink }}">{{ .Params.blogtitle }}</a></h3>
+            <div class="text text-justify">
+                <ul>
+                    <li>{{ .Params.blogdescription1 }} </li>
+                    <li>{{ .Params.blogdescription2 }} </li>
+                </ul>
+
+            </div>
+            <div class="link-box">
+                <a href="{{ .Permalink }}" class="round_shadow_button_blog"><span class="txt">Read
+                        More</span> <span class="icon flaticon-arrows-11"></span></a>
+            </div>
+        </div>
+    </div>
+</div>

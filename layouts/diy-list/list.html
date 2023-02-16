@@ -1,0 +1,301 @@
+{{ define "main" }}
+
+{{/* <section class="faq-section pt-5 pb-5">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="sec-title text-center mb-0">
+            <h2>Solar Panels</h2>
+        </div>
+    </div>
+
+</section> */}}
+
+
+<section class="about-section-four">
+
+    <div class="auto-container">
+        <div class="row clearfix">
+            {{ range where .Site.RegularPages "Type" "in" "diy-list" }}
+            <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0ms"
+                data-wow-duration="2000ms">
+                <div class="ptype" onclick="typeChange('{{ .Params.module_heading }}')"
+                    product-type="{{ .Params.module_heading }}">
+                    <div class="inner-box">
+                        <div class="solarimage-box p-0">
+                            <div class="content">
+                                <img src="{{ .Params.module_image }}">
+                                <div class="text text-center">
+                                    <div class="form-check">
+                                        <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> -->
+                                        <label class="form-check-label text-black" for="defaultCheck1">
+                                            {{ .Params.title }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{/* <div class="row clearfix"> */}}
+                <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 wow fadeInUp"
+                    data-wow-delay="0ms" data-wow-duration="2000ms" >
+                    <a href="/services">
+                        <div class="inner-box" style="opacity:0.5">
+                            <div class="solarimage-box p-0">
+                                <div class="content">
+                                    <img src="/images/Services.jpg">
+                                    <div class="text text-center">
+                                        <a href="/services" class="text-black">
+                                            Services
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/*
+            </div> */}}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="row">
+                    {{ range .Site.RegularPages }}
+                    {{ if eq .Params.section "brand" }}
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12 brand-items" onClick="brandChange('{{ .Params.brand }}')"
+                        solarmodule="{{ .Params.solarmodule }}" mounting="{{ .Params.mounting }}"
+                        solarinverters="{{ .Params.solarinverters }}" electricals="{{ .Params.electricals }}"
+                        storage="{{ .Params.storage }}" brand="{{ .Params.brand }}">
+                        <a href="#"><img src="{{ .Params.image }}" class="brandlogo"></a>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                    {{/* {{ end }}
+                    {{ end }}
+                    {{ end }} */}}
+                    {{/* <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/jasolar.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/jinkosolar.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/longi.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/risen.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/huawei.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/canadiansolar.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/solis.jpeg" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/sungrow.png" class="brandlogo"></a>
+                    </div>
+                    <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <a href="/brand-details"><img src="/images/goodwe.png" class="brandlogo"></a>
+                    </div> */}}
+                </div>
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                <div class="row">
+                    {{ range where .Site.RegularPages "Type" "in" "products" }}
+                    <div class="service-block-five col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInUp product"
+                        data-wow-delay="0ms" data-wow-duration="2000ms" ptype="{{ .Params.product_type }}" product-brand="{{ .Params.brand_slug }}"
+                        style="display: none;">
+                        <a href="{{ .Permalink }}">
+                            <div class="inner-box pt-0">
+                                <div class="solarimage-box p-0">
+                                    <div class="content">
+                                        <img src="{{ .Params.image }}" class="productimg">
+                                        <div class="text text-justify mt-2">
+                                            <span class="producttitle">{{ .Params.product_title }}</span>
+                                        </div>
+                                        <div class="text text-justify mt-0">
+                                            <h5 style="color: #000;">{{ .Params.product_content }}</h5>
+                                        </div>
+                                        <div class="text text-justify ml-2">
+                                            <a href="{{ .Params.datasheet_pdf_link }}"><i class="fa fa-file"
+                                                    aria-hidden="true" style="color: #ff6600;"></i><span
+                                                    class="producttitle">
+                                                    Datasheet</span></a>
+                                        </div>
+                                        <div class="text text-center">
+                                            <a href="{{ .Permalink }}"
+                                                class="mt-3 round_shadow_button_orangepricebtn">Price </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+
+            </div>
+
+        </div>
+
+</section>
+
+<script>
+    let selectedBrands = []
+    let selectedTypes = []
+    let showableBrands = []
+    document.addEventListener("DOMContentLoaded", function (event) {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        if (!!params.type) {
+            let list = document.querySelectorAll('[product-type=' + params.type + ']')
+            selectedTypes.push(params.type)
+            updateTypeFilds()
+        } else {
+            let list = document.querySelectorAll('.ptype')
+            list.forEach((elem) => {
+                elem.firstElementChild.firstElementChild.style.opacity = "0.5"
+            })
+        }
+        if (!!params.brand) {
+            let list = document.querySelectorAll('[brand=' + params.brand + ']')
+            selectedBrands.push(params.brand)
+            list.forEach((elem) => {
+                elem.style.display = "block"
+                elem.firstElementChild.firstElementChild.style.border = "2px solid "
+            })
+        } else {
+            let list = document.querySelectorAll('.brand-items')
+            list.forEach((elem) => {
+                elem.style.display = "block"
+            })
+        }
+        updateShowableBrands()
+        // loadBrandProducts()
+        setTimeout(()=>{loadBrandProducts()},1)
+    })
+
+    function brandChange(brand) {
+        let ind = selectedBrands.indexOf(brand)
+        if (ind === -1) {
+            selectedBrands.push(brand)
+        } else {
+            selectedBrands.splice(ind, 1)
+        }
+        updateBrandFilds()
+        loadBrandProducts()
+    }
+
+    function typeChange(type) {
+        let ind = selectedTypes.indexOf(type)
+        if (ind === -1) {
+            selectedTypes.push(type)
+        } else {
+            selectedTypes.splice(ind, 1)
+        }
+        updateTypeFilds()
+        updateShowableBrands()
+        loadBrandProducts()
+    }
+
+    function updateShowableBrands() {
+        let list = document.querySelectorAll('.brand-items')
+        if(selectedTypes.length > 0){
+            list.forEach((elem) => {
+                elem.style.display = "none"
+            })
+            list.forEach((elem) => {
+                selectedTypes.forEach((type,i)=>{
+                    if(elem.getAttribute(type) === "true"){
+                        elem.style.display = "block"
+                    }
+                })
+            })
+
+        } else {
+            list.forEach((elem) => {
+                elem.style.display = "block"
+            })
+        }
+    }
+
+    function updateBrandFilds() {
+        let list = document.querySelectorAll('.brand-items')
+        list.forEach((elem) => {
+            console.log(elem.getAttribute("brand"))
+            let ind = selectedBrands.indexOf(elem.getAttribute("brand"))
+            if (ind > -1) {
+                elem.firstElementChild.firstElementChild.style.border = "2px solid"
+            } else {
+                elem.firstElementChild.firstElementChild.style.border = "none"
+            }
+        })
+    }
+
+    function updateTypeFilds() {
+        let list = document.querySelectorAll('.ptype')
+        list.forEach((elem) => {
+            let ind = selectedTypes.indexOf(elem.getAttribute("product-type"))
+            if (ind > -1) {
+                elem.firstElementChild.firstElementChild.style.border = "1px solid rgb(33 149 208)"
+                elem.firstElementChild.firstElementChild.style['box-shadow'] = "0px 0px 6px 1px rgb(33 149 208)"
+                elem.firstElementChild.firstElementChild.style.opacity = "1"
+            } else {
+                elem.firstElementChild.firstElementChild.style.border = "none"
+                elem.firstElementChild.firstElementChild.style.opacity = "0.5"
+                elem.firstElementChild.firstElementChild.style['box-shadow'] = ""
+            }
+        })
+    }
+
+    function loadBrandProducts() {
+        if (selectedBrands.length > 0 && selectedTypes.length > 0) {
+            let list = document.querySelectorAll('.product')
+            list.forEach((elem) => {
+                let ind = selectedBrands.indexOf(elem.getAttribute("product-brand"))
+                let ind1 = selectedTypes.indexOf(elem.getAttribute("ptype"))
+                if (ind > -1 && ind1 > -1) {
+                    elem.style.display = "block"
+                } else {
+                    elem.style.display = "none"
+                }
+            })
+        }else if (selectedBrands.length > 0){
+            let list = document.querySelectorAll('.product')
+            list.forEach((elem) => {
+                let ind = selectedBrands.indexOf(elem.getAttribute("product-brand"))
+                if (ind > -1) {
+                    elem.style.display = "block"
+                } else {
+                    elem.style.display = "none"
+                }
+            })
+        }else if (selectedTypes.length > 0){
+            let list = document.querySelectorAll('.product')
+            list.forEach((elem) => {
+                let ind = selectedTypes.indexOf(elem.getAttribute("ptype"))
+                if (ind > -1) {
+                    elem.style.display = "block"
+                } else {
+                    elem.style.display = "none"
+                }
+            })
+        }else {
+            let list = document.querySelectorAll('.product')
+            list.forEach((elem) => {
+                elem.style.display = "block"
+            })
+        }
+    }
+// 2px solid #0487c9
+</script>
+
+</section>
+{{ end }}

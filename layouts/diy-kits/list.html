@@ -1,0 +1,54 @@
+{{ define "main" }}
+    
+<section class="services-section-five">
+
+    <div class="auto-container">
+        <div class="">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--Service Block Three-->
+                    <div class="service-block-six">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <a onclick="setProperty('residential')"><img src="{{ .Params.residential_image }}" alt="{{ .Params.residential_title }}"></a>
+                                </figure>
+                            </div>
+                            <div class="link-box mt-4">
+                                <a onclick="setProperty('residential')" class="round_shadow_button_diykits"><span
+                                        class="txt">{{ .Params.residential_title }}</span> <span
+                                        class="icon flaticon-arrows-11"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Service Block Three-->
+                    <div class="service-block-six">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <a onclick="setProperty('commercial')"><img src="{{ .Params.commercial_image }}" alt="{{ .Params.commercial_title }}"></a>
+                                </figure>
+                            </div>
+                            <div class="link-box mt-4">
+                                <a onclick="setProperty('commercial')" class="round_shadow_button_diykits"><span
+                                        class="txt">{{ .Params.commercial_title }}</span> <span
+                                        class="icon flaticon-arrows-11"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function setProperty(type){
+            localStorage.setItem('property', type)
+            window.location.href = "/brands"
+        }
+    </script>
+</section>
+{{ end }}

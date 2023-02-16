@@ -1,0 +1,275 @@
+{{ define "main" }}
+    
+<section class="faq-section">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="title-boxabout mb-4">
+            <h2 class="mb-4">{{ .Params.stc_heading }}
+            </h2>
+
+            <h2 class="mb-4" style="color:#073265;">Click on Small generation unit STC calculator
+            </h2>
+            <h3 style="font-size: 27px;" class="mb-4">
+                <a href="{{ .Params.stc_calculator_link }}" target="_blank" style="color:#ec6713;">
+                    {{ .Params.stc_calculator_link }} 
+                </a>
+            </h3>
+
+            <h2 class="mb-4">to calculate your small generation unit point
+            </h2>
+        </div>
+        <div class="sec-title text-center mb-0">
+            <h2>Note</h2>
+        </div>
+        
+        <div class="title-boxabout">
+            <p> {{ .Params.note_1 }} <br>
+                {{ .Params.note_2 }}
+            </p>
+        </div>
+        
+
+    </div>
+    
+</section>
+
+        
+<section class="about-section-four">
+
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!--Title Column-->
+            <div class="title-column col-lg-7 col-md-12 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"
+                data-wow-duration="2000ms">
+                <div class="inner">
+                    <div class="sec-title">
+                        <h2>How to calculate your system size?</h2>
+                        <div class="bottom-dots clearfix">
+                            <span class="dot line-dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="text-content text-justify">
+                        <table class="table table-bordered">
+                            <tbody>
+                              <tr>
+                                <td style="vertical-align: middle;">Enter Number of panels</td>
+                                <td><form>
+                                    <div>
+                                      <input type="number" class="form-control" id="noOfPanels" oninput="calcuteSystemSize()">
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align: middle;">Enter Size of panels in Watts</td>
+                                <td><form>
+                                    <div>
+                                      <input type="number" class="form-control" id="sizeOfPanels" oninput="calcuteSystemSize()">
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align: middle;">Your System Size is</td>
+                                <td><form>
+                                    <div>
+                                      <input type="text" id="systemSize" class="form-control" disabled>
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <!-- <tr>
+                                <td colspan="2"><button class="mt-0 round_shadow_button_orange" onclick="calcuteSystemSize()">Click</button></td>
+                              </tr> -->
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="sec-title">
+                        <h2>Know your Government rebate amount eligibility: </h2>
+                        <div class="bottom-dots clearfix">
+                            <span class="dot line-dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="text-content text-justify">
+                        <table class="table table-bordered">
+                            <tbody>
+                              <tr>
+                                <td style="vertical-align: middle;">Enter "Number of STCs" <br>
+                                    *Received from REC Registry Site                                        </td>
+                                <td><form>
+                                    <div>
+                                      <input type="text" class="form-control" id="noOfStcs" oninput="rebateAmount()">
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align: middle;">Value per STC points today</td>
+                                <td><form>
+                                    <div>
+                                      <input type="number" id="ctcPointValue" class="form-control" value="38" disabled>
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align: middle;">Your Government Rebate Amount Eligibility</td>
+                                <td><form>
+                                    <div>
+                                      <input type="text" id="rebateAmount" class="form-control" disabled>
+                                    </div>
+                                  </form></td>
+                              </tr>
+                              <!-- <tr>
+                                <td colspan="2"><button class="mt-0 round_shadow_button_orange" onclick="rebateAmount()">Click</button></td>
+                              </tr> -->
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+
+            <!--Text Column-->
+            <div class="text-column col-lg-5 col-md-12 col-sm-12">
+                <div class="featured-block-five col-lg-12 col-md-12 col-sm-12 wow fadeInRight"
+                    data-wow-delay="0ms" data-wow-duration="2000ms">
+                    <div class="inner-box">
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-4 col-form-label">Name:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="name3" onchange="changeStyle('name3')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Email ID:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="email3" onchange="changeStyle('email3')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Contact No:</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" id="mobile3" onchange="changeStyle('mobile3')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-4 col-form-label">Address:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="" id="address3" onchange="changeStyle('address3')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="text-center col-md-12 submit_btn3">
+                                    <button class="mt-3 round_shadow_button" onclick="submit()">Submit <i
+                                            class="fa fa-check-circle"></i></button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Q2bQLNSYb1FFWHiGUnFiCkvjjNaZPEM&libraries=places&callback=initMap">
+</script>
+
+<script>
+
+function initMap() {
+    google.maps.event.addDomListener(window, 'load', initialize);
+}
+ 
+ function initialize() {
+     var input = document.getElementById('address3');
+     var autocomplete = new google.maps.places.Autocomplete(input);
+ }
+    function calcuteSystemSize(){
+        const noOfPanels = $('#noOfPanels').val();
+        const sizeOfPanels = $('#sizeOfPanels').val();
+        const systemSize = (noOfPanels * sizeOfPanels)/1000
+        $('#systemSize').val(systemSize + " KW");
+    }
+
+    function rebateAmount(){
+       const noOfStcs = $('#noOfStcs').val();
+        const ctcPointValue = $('#ctcPointValue').val();
+        const rebateAmount = noOfStcs * ctcPointValue
+        $('#rebateAmount').val(rebateAmount + " $");
+    }
+
+    function changeStyle(params) {
+      document.getElementById(`${params}`).style.border = "1px solid gray";  
+    }
+
+    async function submit() {
+    
+          if ($("#name3").val().trim() == "") {
+              document.getElementById("name3").style.border = "3px solid red";
+          }
+
+          if ($("#email3").val().trim() == "") {
+              document.getElementById("email3").style.border = "3px solid red";
+          }
+
+          if ($("#mobile3").val().trim() == "") {
+              document.getElementById("mobile3").style.border = "3px solid red";
+          }
+
+          if ($("#address3").val().trim() == "") {
+              document.getElementById("address3").style.border = "3px solid red";
+          }
+
+          const name = $("#name3").val();
+          const email = $("#email3").val();
+          const mobile = $("#mobile3").val();
+          const address = $("#address3").val();
+    
+
+      const data = {
+          name: name,
+          email: email,
+          mobile: mobile,
+          address: address,
+      };
+
+      if(!name || !email || !mobile || !address){
+          return false;
+      }
+
+      document.getElementsByClassName("submit_btn3")[0].innerHTML = '<div class="spinner-border" style= "color:#073265; margin-top: 3%" role="status"><span class="sr-only">Loading...</span></div>'
+     
+      await fetch("https://www.energyplatform.com.au/.netlify/functions/get-in-touch", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json",
+      }
+    }).then((response) => {
+              clearForm();
+              document.getElementsByClassName("submit_btn3")[0].innerHTML = "<button type='submit' class='mt-3 round_shadow_button' onclick='submit(form)'>Submit <i class='fa fa-check-circle'></i></button>"
+              alert("Thank you! \n Your message has been successfully sent. We will contact you very soon") 
+            })
+            .catch((err) => {
+                console.log(err);
+                clearForm();
+                document.getElementsByClassName("submit_btn3")[0].innerHTML = "<button type='submit' class='mt-3 round_shadow_button' onclick='submit(form)'>Submit <i class='fa fa-check-circle'></i></button>"
+                alert("Something went wrong, Please try again later...");
+          });
+      }
+
+    function clearForm(){
+      document.getElementById("name3").value = "";
+      document.getElementById("email3").value = "";
+      document.getElementById("mobile3").value = "";
+      document.getElementById("address3").value = "";
+    }
+
+</script>
+
+{{ end }}

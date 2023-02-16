@@ -1,0 +1,130 @@
+{{ define "main" }}
+
+<section class="faq-section">
+  <div class="auto-container">
+      <!--Title-->
+      <div class="sec-title text-center mb-0">
+          <h2>{{ .Params.vision_title }}</h2>
+      </div>
+      <div class="title-boxabout mb-4">
+          <h2 class="">{{ .Params.vision_content }}
+          </h2>
+      </div>
+      <div class="sec-title text-center mb-0">
+          <h2>{{ .Params.mission_title }}</h2>
+      </div>
+      <div class="title-boxabout">
+          <h2 class="">{{ .Params.mission_content }}
+          </h2>
+      </div>
+      
+
+  </div>
+  
+</section>
+
+      
+<section class="about-section-four">
+
+  <div class="auto-container">
+      <div class="row clearfix">
+          <!--Title Column-->
+          <div class="title-column col-lg-7 col-md-12 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"
+              data-wow-duration="2000ms">
+              <div class="inner">
+                  <div class="sec-title">
+                      <h2>{{ .Params.welcome_title }}</h2>
+                      <div class="bottom-dots clearfix">
+                          <span class="dot line-dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                      </div>
+
+                  </div>
+                  <div class="text-content text-justify">
+                      <p>{{ .Params.welcome_content }}
+                      </p>
+                  </div>
+                  <div class="sec-title">
+                      <h2>{{ .Params.what_we_do_title }}</h2>
+                      <div class="bottom-dots clearfix">
+                          <span class="dot line-dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                      </div>
+
+                  </div>
+                  <div class="text-content text-justify">
+                      <p>{{ .Params.what_we_do_content }}
+                      </p>
+                      
+                  </div>
+                  <div class="sec-title">
+                      <h2>{{ .Params.what_more_title }}</h2>
+                      <div class="bottom-dots clearfix">
+                          <span class="dot line-dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                      </div>
+
+                  </div>
+                  <div class="text-content text-justify">
+                      <p>{{ .Params.what_more_content }}
+                      </p>
+                      
+                  </div>
+              </div>
+          </div>
+
+          <!--Text Column-->
+          <div class="text-column col-lg-5 col-md-12 col-sm-12">
+              <div class="featured-block-five col-lg-12 col-md-12 col-sm-12 wow fadeInRight"
+                  data-wow-delay="0ms" data-wow-duration="2000ms">
+                  <div class="inner-box">
+                      <form>
+                          <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Name:</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="inputPassword" class="col-sm-4 col-form-label">Email ID:</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="inputPassword" class="col-sm-4 col-form-label">Contact No:</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="inputPassword" class="col-sm-4 col-form-label">Address:</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control" id="address_inq">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <div class="text-center col-md-12">
+                                  <button type="submit" class="mt-3 round_shadow_button">Submit <i
+                                          class="fa fa-check-circle"></i></button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+  </div>
+
+</section>
+  {{ end }}
+
+
